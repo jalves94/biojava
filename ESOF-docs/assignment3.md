@@ -1,3 +1,19 @@
+#Software Architecture and the 4+1 Architectural View Model
+
+
+##Introduction [[1]](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf)
+
+
+Software architecture can be described by multiple views, dealing with design and implementation of high-level structures of the software. With software architecture, it is possible to combine architectural elements in specific forms in order to organize and handle with functional and non-functional requirements of the system. The five perspectives are the following:
+
+![viewmodel](Images/viewmodel.JPG)
+
+* _Logical View_: supports the functional requirements and shows a set of key abstractions, in this case in form of packages;
+* _Development View_: describes the static organization and composition of the software in its development environment;
+* _Process View_: takes into account non-functional requirements and shows how several aspects of the design can interact with each other (concurrency and synchronization properties);
+* _Deployment View_ (Physical View): describes the relations between software and hardware (how software components are distributed across the hardware nodes);
+* _Use Case View_ (Scenarios): the description of the architecture can be organized around the previous four views and then be illustrated by a few selected use cases which become a fifth view (+1) that relates the other four.
+
 ## Development View
 
 There are three main project libraries that are used in almost all of the others components: the Core library, the Structure library and the Alignment Library.
