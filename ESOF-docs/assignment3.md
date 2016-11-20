@@ -1,3 +1,33 @@
+#Software Architecture and the 4+1 Architectural View Model
+
+
+##Introduction [[1]](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf)
+
+Software architecture can be described by multiple views, dealing with design and implementation of high-level structures of the software. With software architecture, it is possible to combine architectural elements in specific forms in order to organize and handle with functional and non-functional requirements of the system. The five perspectives are the following:
+
+![viewmodel](Images/viewmodel.JPG)
+
+* _Logical View_: supports the functional requirements and shows a set of key abstractions, in this case in form of packages;
+* _Development View_: describes the static organization and composition of the software in its development environment;
+* _Process View_: takes into account non-functional requirements and shows how several aspects of the design can interact with each other (concurrency and synchronization properties);
+* _Deployment View_ (Physical View): describes the relations between software and hardware (how software components are distributed across the hardware nodes);
+* _Use Case View_ (Scenarios): the description of the architecture can be organized around the previous four views and then be illustrated by a few selected use cases which become a fifth view (+1) that relates the other four.
+
+Regarding architectural patterns, BioJava follows the Pipe-And-Filter architecture, since the data can arrive in multiple formats. There are several converters (RecordConverters) that do the conversion between different formats (such as Genbank Record) into FASTA format (the standard format used to represent a sequence of nucleotides) [2]. Additionally, there is a set of tools to convert sequence strings and taxonomy strings into BioJava like-objects [2]. That way, as one of the creators of BioJava, Spencer Bliver, says, some of the practices they have been performed is based on semantic versioning/analysis.
+
+## Logical View
+Biojava Project has several modules that allow the processing of biological data [3]:
+* Core: models both nucleotide and amino acid sequences and their inherent relationships;
+* Protein structure: compares proteins and its structure and also provides tools for protein manipulation (3D);
+* Genome and sequencing: with this model, it is possible to create sequences of genes;
+* Alignment: provides tools to align sequences;
+* ModFinder: provides the classes to find and classify protein modifications in protein 3D structures;
+* Amino acid properties: several properties of proteins can be calculated, such as molecular weight, instability index, etc;
+* Protein disorder: provides tools to predict disorder in multiple proteins;
+Regarding the dependencies, the classes are dependent of core, structures and alignment modules due the fact that all the features that are implemented are related to the protein itself and to operate with the protein its structure, composition and alignment has to be well defined. That way, the package diagram is the following [[1]](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf):
+
+![viewmodel](Images/packagediagram.PNG)
+
 ## Development View
 
 There are three main project libraries that are used in almost all of the others components: the Core library, the Structure library and the Alignment Library.
