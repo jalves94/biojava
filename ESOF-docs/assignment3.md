@@ -83,7 +83,7 @@ We can see the basis of all this in the following diagram:
 
 ![ActivityDiagram](Images/DeploymentModel.png)
 
-The basic principles of operation can be seen (here)[[4]][http://biojava.org/wikis/BioJava3_Design/]. The most relevant ones are stated bellow:
+The basic principles of operation can be seen (here)[[4]](http://biojava.org/wikis/BioJava3_Design/). The most relevant ones are stated bellow:
 
 
 * BioJava will freely incorporate features from Java 6.
