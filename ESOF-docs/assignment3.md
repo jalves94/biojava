@@ -20,5 +20,5 @@ Finally, the project contains a web service that allows access to two different 
 
 It was decided that it would be best to divide the component diagram in two parts due to the high amount of interfaces between components caused by the complexity of the project. The two parts of the diagram are the following:
 
-![Component diagram](Images/component_diagram_1.jpg)
-![Component diagram](Images/component_diagram_2.jpg)
+![Component diagram](Images/component_model_1.jpg)
+![Component diagram](Images/component_model_2.jpg)
