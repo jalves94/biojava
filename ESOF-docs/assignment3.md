@@ -26,6 +26,7 @@ Biojava Project has several modules that allow the processing of biological data
 * ModFinder: provides the classes to find and classify protein modifications in protein 3D structures;
 * Amino acid properties: several properties of proteins can be calculated, such as molecular weight, instability index, etc;
 * Protein disorder: provides tools to predict disorder in multiple proteins;
+
 Regarding the dependencies, the classes are dependent of core, structures and alignment modules due the fact that all the features that are implemented are related to the protein itself and to operate with the protein its structure, composition and alignment has to be well defined. That way, the package diagram is the following:
 
 ![packagediagram](Images/packagediagram.PNG)
@@ -64,3 +65,36 @@ Since BioJava is a framework, there are some demos available to illustrate the u
 The "File" menu allows to open or export a PDB file, load or save an Alignment XML and Print. So first, it is necessary to open a protein structure through a PDB file. Then, the user can simply visualize the structure and select a color and style for the representation or perform a new alignment. As the "View" menu allows to check some results of the alignment, it is expected that an alignment will be performed (or loaded) first. An alignment (multiple or pairwise) can be performed through the "Align" menu. The flow of operations is described on the following activity diagram:
 
 ![ActivityDiagram](Images/activitydiagram.jpg)
+
+
+##Deployment View
+
+
+BioJava is an established open-source project driven by an active developer community. This means that BioJava is a volunteer project currently supported by donated time. The hardware, bandwidth and server support is all provided through volunteers and donations. The project is hosted by the (Open Bioinformatics Foundation)[http://www.open-bio.org], which provides the source code repository, bug tracking database and email mailing lists.
+
+The supported data range in scope from DNA and protein sequence information up to the level of 3D protein structures. BioJava provides various file parsers, data models and algorithms to facilitate working with the standard data formats and enables rapid application development and analysis.
+
+The storage of data is designed to minimize memory usage for large collections using a ‘proxy’ storage concept. Various proxy implementations are provided which can store sequences in memory, fetch sequences on demand from a web service such as UniProt or read sequences from a FASTA file as needed. The latter two approaches save memory by not loading sequence data until it is referenced in the application. This concept can be extended to handle very large genomic datasets, such as NCBI GenBank or a proprietary database.
+
+BioJava also contains a web services module that allows bioinformatics services to be accessed using REST protocols. Currently, two services are implemented: NCBI Blast through the Blast URLAPI (previously known as QBlast) and the HMMER web service at hmmer- janelia.org.
+
+
+We can see the basis of all this in the following diagram:
+
+![ActivityDiagram](Images/DeploymentModel.jpg)
+
+The basic principles of operation can be seen (here)[http://biojava.org/wikis/BioJava3_Design/]. The most relevant ones are stated bellow:
+
+
++BioJava will freely incorporate features from Java 6.
++Maven will be used to build the project.
++Full unit testing for every aspect from the ground up using JUnit.
++Modular design without any cyclic dependencies, with separate JARs for key components (IO, databases, genetic algorithms, sequence manipulation, etc.)
++Separation of APIs from implementation code by means of packages.
++Use of JavaBeans concepts wherever possible, e.g. getters/setters. 
++Separation of functionality - this saves memory and allows work to be done independently on the specific parts of interest.
++Any general-use methods to be exposed via SPI (e.g. getTopBlastHit()).
++The source code license will be the GNU Lesser General Public License (LGPL) “version 2.1 or any later version”.
++The default Java logging API should be used extensively. This will allow a developer the ability to fine tune debugging. The core module should have a logging helper with static convenience methods to make it very easy to liberally use logging calls via static imports.
+
+
