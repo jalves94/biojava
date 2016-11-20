@@ -8,11 +8,11 @@ Software architecture can be described by multiple views, dealing with design an
 
 ![viewmodel](Images/viewmodel.JPG)
 
-*_Logical View_: supports the functional requirements and shows a set of key abstractions, in this case in form of packages;
-*_Development View_: describes the static organization and composition of the software in its development environment;
-*_Process View_: takes into account non-functional requirements and shows how several aspects of the design can interact with each other (concurrency and synchronization properties);
-*_Deployment View_ (Physical View): describes the relations between software and hardware (how software components are distributed across the hardware nodes);
-*_Use Case View_ (Scenarios): the description of the architecture can be organized around the previous four views and then be illustrated by a few selected use cases which become a fifth view (+1) that relates the other four.
+* _Logical View_: supports the functional requirements and shows a set of key abstractions, in this case in form of packages;
+* _Development View_: describes the static organization and composition of the software in its development environment;
+* _Process View_: takes into account non-functional requirements and shows how several aspects of the design can interact with each other (concurrency and synchronization properties);
+* _Deployment View_ (Physical View): describes the relations between software and hardware (how software components are distributed across the hardware nodes);
+* _Use Case View_ (Scenarios): the description of the architecture can be organized around the previous four views and then be illustrated by a few selected use cases which become a fifth view (+1) that relates the other four.
 
 ## Development View
 
