@@ -1,9 +1,9 @@
 #Software Architecture and the 4+1 Architectural View Model
 
 
-##Introduction [[1]](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf)
+##Introduction
 
-Software architecture can be described by multiple views, dealing with design and implementation of high-level structures of the software. With software architecture, it is possible to combine architectural elements in specific forms in order to organize and handle with functional and non-functional requirements of the system. The five perspectives are the following:
+Software architecture can be described by multiple views, dealing with design and implementation of high-level structures of the software. With software architecture, it is possible to combine architectural elements in specific forms in order to organize and handle with functional and non-functional requirements of the system. The five perspectives are the following [[1]](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf):
 
 ![viewmodel](Images/viewmodel.JPG)
 
@@ -13,9 +13,10 @@ Software architecture can be described by multiple views, dealing with design an
 * _Deployment View_ (Physical View): describes the relations between software and hardware (how software components are distributed across the hardware nodes);
 * _Use Case View_ (Scenarios): the description of the architecture can be organized around the previous four views and then be illustrated by a few selected use cases which become a fifth view (+1) that relates the other four.
 
-Regarding architectural patterns, BioJava follows the Pipe-And-Filter architecture, since the data can arrive in multiple formats. There are several converters (RecordConverters) that do the conversion between different formats (such as Genbank Record) into FASTA format (the standard format used to represent a sequence of nucleotides) [2]. Additionally, there is a set of tools to convert sequence strings and taxonomy strings into BioJava like-objects [2]. That way, as one of the creators of BioJava, Spencer Bliver, says, some of the practices they have been performed is based on semantic versioning/analysis.
+Regarding architectural patterns, BioJava follows the Pipe-And-Filter architecture, since the data can arrive in multiple formats. There are several converters (RecordConverters) that do the conversion between different formats (such as Genbank Record) into FASTA format (the standard format used to represent a sequence of nucleotides) [[2]](http://biojava.org/wikis/BioJava3_Proposal/). Additionally, there is a set of tools to convert sequence strings and taxonomy strings into BioJava like-objects [[2]](http://biojava.org/wikis/BioJava3_Proposal/). That way, as one of the creators of BioJava, Spencer Bliver, says, some of the practices they have been performed is based on semantic versioning/analysis.
 
 ## Logical View
+
 Biojava Project has several modules that allow the processing of biological data [3]:
 * Core: models both nucleotide and amino acid sequences and their inherent relationships;
 * Protein structure: compares proteins and its structure and also provides tools for protein manipulation (3D);
@@ -26,7 +27,7 @@ Biojava Project has several modules that allow the processing of biological data
 * Protein disorder: provides tools to predict disorder in multiple proteins;
 Regarding the dependencies, the classes are dependent of core, structures and alignment modules due the fact that all the features that are implemented are related to the protein itself and to operate with the protein its structure, composition and alignment has to be well defined. That way, the package diagram is the following [[1]](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf):
 
-![viewmodel](Images/packagediagram.PNG)
+![packagediagram](Images/packagediagram.PNG)
 
 ## Development View
 
