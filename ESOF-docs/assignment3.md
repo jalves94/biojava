@@ -70,7 +70,7 @@ The "File" menu allows to open or export a PDB file, load or save an Alignment X
 ##Deployment View
 
 
-BioJava is an established open-source project driven by an active developer community. This means that BioJava is a volunteer project currently supported by donated time. The hardware, bandwidth and server support is all provided through volunteers and donations. The project is hosted by the (Open Bioinformatics Foundation)[http://www.open-bio.org], which provides the source code repository, bug tracking database and email mailing lists.
+BioJava is an established open-source project driven by an active developer community. This means that BioJava is a volunteer project currently supported by donated time. The hardware, bandwidth and server support is all provided through volunteers and donations. The project is hosted by the (Open Bioinformatics Foundation) [[4]](http://www.open-bio.org), which provides the source code repository, bug tracking database and email mailing lists.
 
 The supported data range in scope from DNA and protein sequence information up to the level of 3D protein structures. BioJava provides various file parsers, data models and algorithms to facilitate working with the standard data formats and enables rapid application development and analysis.
 
@@ -83,7 +83,7 @@ We can see the basis of all this in the following diagram:
 
 ![ActivityDiagram](Images/DeploymentModel.png)
 
-The basic principles of operation can be seen (here)[[4]](http://biojava.org/wikis/BioJava3_Design/). The most relevant ones are stated bellow:
+The basic principles of operation can be seen (here) [[5]] (http://biojava.org/wikis/BioJava3_Design/). The most relevant ones are stated bellow:
 
 
 * BioJava will freely incorporate features from Java 6.
