@@ -17,7 +17,7 @@ Regarding architectural patterns, BioJava follows the Pipe-And-Filter architectu
 
 ## Logical View
 
-Biojava Project has several modules that allow the processing of biological data [3]:
+Biojava Project has several modules that allow the processing of biological data [[3]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3467744/):
 * Core: models both nucleotide and amino acid sequences and their inherent relationships;
 * Protein structure: compares proteins and its structure and also provides tools for protein manipulation (3D);
 * Genome and sequencing: with this model, it is possible to create sequences of genes;
@@ -25,7 +25,8 @@ Biojava Project has several modules that allow the processing of biological data
 * ModFinder: provides the classes to find and classify protein modifications in protein 3D structures;
 * Amino acid properties: several properties of proteins can be calculated, such as molecular weight, instability index, etc;
 * Protein disorder: provides tools to predict disorder in multiple proteins;
-Regarding the dependencies, the classes are dependent of core, structures and alignment modules due the fact that all the features that are implemented are related to the protein itself and to operate with the protein its structure, composition and alignment has to be well defined. That way, the package diagram is the following [[1]](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf):
+
+Regarding the dependencies, the classes are dependent of core, structures and alignment modules due the fact that all the features that are implemented are related to the protein itself and to operate with the protein its structure, composition and alignment has to be well defined. That way, the package diagram is the following:
 
 ![packagediagram](Images/packagediagram.PNG)
 
