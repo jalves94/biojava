@@ -86,7 +86,7 @@ For the reasons presented above, it is possible to infer that the Biojava projec
 * Bugs related to bad implementation: some functions and features actually work but not in a proper way. For example, some functions about calculations (length, angles, rotations, identity, similarity etc) are working, but the obtained values may not correspond to reality.
 Bugs related to missing/incomplete features: some features are implemented but are not prepared to deal with all situations and need to be enhanced. For example, alignments can be done for sequences only without consecutive gaps.
 
-* Taking just in consideration the demonstrations available in the project that can be runned, it is possible to detect some bugs too (there are also a few reported in the issues). For example, in the Structure GUI demo, when the "Reset Display"ù button is pressed, the protein structure doesn't restore to its initial appearance after performing changes in the visualization options. That bug is related to a Jmol command that is not executing well on the Jmol interface.
+* Taking just in consideration the demonstrations available in the project that can be runned, it is possible to detect some bugs too (there are also a few reported in the issues). For example, in the Structure GUI demo, when the "Reset Display" button is pressed, the protein structure doesn't restore to its initial appearance after performing changes in the visualization options. That bug is related to a Jmol command that is not executing well on the Jmol interface.
 
 
 Also, in the Alignment GUI demo, it was possible to test the robustness of the interface to invalid inputs of the users. In the pairwise structure alignment, there is a window to choose the parameters for the alignment algorithm:
@@ -101,13 +101,13 @@ This happens because the program has an if cycle to convert the input string (va
 
 ![ifcycle](Images/ifcycle.JPG)
 
-However, when trying to parse the string "aaaa" to an integer, a number format exception error is thrown and the error message "Could not set value <value> for field <field>"ù doesn't appear in the console. This also happens if the user tries to write a float for a parameter that is supposed to be an integer. This bug can be easily solved introducing a try-catch statement to the parsing:
+However, when trying to parse the string "aaaa" to an integer, a number format exception error is thrown and the error message "Could not set value <value> for field <field>" doesn't appear in the console. This also happens if the user tries to write a float for a parameter that is supposed to be an integer. This bug can be easily solved introducing a try-catch statement to the parsing:
 
 ![solution1](Images/solution1.png)
 
 ![solution2](Images/solution2.png)
 
-This way, the variable "data"ù stays as "null"ù and the error message is printed in the console (the parameter is set with its default value):
+This way, the variable "data" stays as "null"ùand the error message is printed in the console (the parameter is set with its default value):
 
 ![console](Images/console.JPG)
 
