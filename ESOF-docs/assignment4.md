@@ -4,7 +4,7 @@
 
 Since BioJava is a project that provides a Java framework for processing biological data, it is not as testable as other programs that can be runned immediately. This means that a developer is supposed to use the code of the project and apply it into his/her own project. For the same reason, it is logical that several components of the project can be tested individually and there are also some available demonstrations that can be tested (for example, the Structure package has a graphical interface demonstration).
 BioJava uses Travis CI for continuous integration, building, checking and analyzing the code constantly. When a developer does a pull request on GitHub, the Travis CI tool allows to test if it can be integrated with the rest of the project and if it will not create any conflicts in the project. If a pull request fails the test, it will not integrate the project. BioJava also uses JUnit tests. JUnit tests are made automatically in a fast and more reliable way and with less investment in human resources. JUnit promotes the idea of "first testing then coding", so the goal is making a test data for a piece of code (in this case, for packages and also for each class) that can be tested first and then implemented, and obtain immediate feedback [[1]](https://www.tutorialspoint.com/junit/junit_overview.htm). Additionally, this project has also some integration tests to test the integration between packages.
-Developers also rely on the community�s feedback in order to find bugs and in some of the cases correct them.
+Developers also rely on the community's feedback in order to find bugs and in some of the cases correct them.
 The testability of software components is determined by factors such as controllability, observability, isolateability, separation of concerns, understandability and heterogeneity.
 
 
@@ -67,10 +67,10 @@ Therefore, it can be concluded that BioJava has a good overall grade (B) that wa
 ###Dynamic Analysis
 
 
-Analysing the results of the application of the EclEmma to the JUnit tests, the test coverage of the project is really bad, as it can be seen in the table below. The covered percentage varies between 1% and almost 90%. This means that the different packages aren�t equally covered. For instance, the Structure GUI, which is an interface for the user to quickly use the features of  the project, is almost not covered by the JUnit tests which means that it�s probable that it has a lot of bugs and doesn�t work properly well. Additionally, there are 2 packages (�Biojava WebServices� and �Biojava survival�) that don�t have any tests implemented, which means that they were not tested.
+Analysing the results of the application of the EclEmma to the JUnit tests, the test coverage of the project is really bad, as it can be seen in the table below. The covered percentage varies between 1% and almost 90%. This means that the different packages aren't equally covered. For instance, the Structure GUI, which is an interface for the user to quickly use the features of  the project, is almost not covered by the JUnit tests which means that it's probable that it has a lot of bugs and doesn't work properly well. Additionally, there are 2 packages (Biojava WebServices and Biojava survival) that don't have any tests implemented, which means that they were not tested.
 Analysing the covered instructions over the project it can be seen that only 48% of the instructions are covered by the tests (218805 covered instructions in 455596) which is a really small value. Regarding the type of code, most of it is not sequential, that means there are a lot of for and if cycles that need to pass several tests.
 
-The dependency coverage analyzes in each package if the dependencies are covered by the tests. Seeing the values it can be concluded that these dependencies are almost not covered for each package. However, the project has a package called �Integration test� that has tests for the integration between the other packages, which covers in part some of the existing dependencies. Nonetheless, neither this package is totally covered (75,8%) as well as its dependencies. This package presents some failures in the tests which indict that the integration between packages or the tests are not well implemented. In total there are 27 failures in the tests, which can indict that there are a lot of bugs inside the project. Also, analysing the number of tests and failures for each package, it can be concluded that the packages that have few tests done are the only ones without failures. As the number of tests increases, the number of failures increases too, which probably means that the packages with a lower number of tests have some failures that were not covered by them.
+The dependency coverage analyzes in each package if the dependencies are covered by the tests. Seeing the values it can be concluded that these dependencies are almost not covered for each package. However, the project has a package called Integration test that has tests for the integration between the other packages, which covers in part some of the existing dependencies. Nonetheless, neither this package is totally covered (75,8%) as well as its dependencies. This package presents some failures in the tests which indict that the integration between packages or the tests are not well implemented. In total there are 27 failures in the tests, which can indict that there are a lot of bugs inside the project. Also, analysing the number of tests and failures for each package, it can be concluded that the packages that have few tests done are the only ones without failures. As the number of tests increases, the number of failures increases too, which probably means that the packages with a lower number of tests have some failures that were not covered by them.
 In conclusion, giving the lack of coverage of the tests and since there are a lot of failures just on the 50% that is covered, it can be concluded that the project is not well tested and probably has a lot of bugs to be corrected.
 
 ![Coverage table](Images/coverage_table.jpg)
@@ -78,6 +78,7 @@ In conclusion, giving the lack of coverage of the tests and since there are a lo
 Flaky tests are tests that fail intermittently, which means that sometimes they pass and others they fail. This can happen if there is an underlying bug that only happens in some cases. After a considerable number of test runs and looking for the number of failures in the table it is possible to conclude that there are at least 8 flaky tests on the project. This can be a problem because if one of these tests is only executed once and passes, it could cause problems in future applications of the project. For that reason, this kind of tests needs to be identified and corrected fastly.  
 
 ##Bugs
+
 For the reasons presented above, it is possible to infer that the Biojava project has a lot of bugs. Regarding the issues on GitHub, there are 67 issues labeled as bugs. Ten of them are still open and the other 57 are already closed. In general, there are three types of bugs reported:
 
 * Bugs related to the code itself: some functions do not work properly, some command lines are broken and consequently cause errors. For example, errors related to endless loops or a file opening with a specific format.
@@ -85,14 +86,14 @@ For the reasons presented above, it is possible to infer that the Biojava projec
 * Bugs related to bad implementation: some functions and features actually work but not in a proper way. For example, some functions about calculations (length, angles, rotations, identity, similarity etc) are working, but the obtained values may not correspond to reality.
 Bugs related to missing/incomplete features: some features are implemented but are not prepared to deal with all situations and need to be enhanced. For example, alignments can be done for sequences only without consecutive gaps.
 
-* Taking just in consideration the demonstrations available in the project that can be runned, it is possible to detect some bugs too (there are also a few reported in the issues). For example, in the Structure GUI demo, when the “Reset Display” button is pressed, the protein structure doesn’t restore to its initial appearance after performing changes in the visualization options. That bug is related to a Jmol command that is not executing well on the Jmol interface.
+* Taking just in consideration the demonstrations available in the project that can be runned, it is possible to detect some bugs too (there are also a few reported in the issues). For example, in the Structure GUI demo, when the "Reset Display"� button is pressed, the protein structure doesn't restore to its initial appearance after performing changes in the visualization options. That bug is related to a Jmol command that is not executing well on the Jmol interface.
 
 
 Also, in the Alignment GUI demo, it was possible to test the robustness of the interface to invalid inputs of the users. In the pairwise structure alignment, there is a window to choose the parameters for the alignment algorithm:
 
 ![alignmentgui](Images/alignmentgui.JPG)
 
-If the user writes letters instead of numbers in any of the parameters, after pressing “Apply”, the program retrieves a number format exception:
+If the user writes letters instead of numbers in any of the parameters, after pressing "Apply", the program retrieves a number format exception:
 
 ![programcrash](Images/programcrash.JPG)
 
@@ -100,13 +101,14 @@ This happens because the program has an if cycle to convert the input string (va
 
 ![ifcycle](Images/ifcycle.JPG)
 
-However, when trying to parse the string “aaaa” to an integer, a number format exception error is thrown and the error message “Could not set value <value> for field <field>” doesn’t appear in the console. This also happens if the user tries to write a float for a parameter that is supposed to be an integer. This bug can be easily solved introducing a try-catch statement to the parsing:
+However, when trying to parse the string "aaaa" to an integer, a number format exception error is thrown and the error message "Could not set value <value> for field <field>"� doesn't appear in the console. This also happens if the user tries to write a float for a parameter that is supposed to be an integer. This bug can be easily solved introducing a try-catch statement to the parsing:
 
 ![solution1](Images/solution1.png)
 
 ![solution2](Images/solution2.png)
 
-This way, the variable “data” stays as “null” and the error message is printed in the console (the parameter is set with its default value):
+This way, the variable "data"� stays as "null"� and the error message is printed in the console (the parameter is set with its default value):
 
 ![console](Images/console.JPG)
+
 The pull request for this resolution can be found [here](https://github.com/biojava/biojava/pull/615).
