@@ -107,7 +107,7 @@ However, when trying to parse the string "aaaa" to an integer, a number format e
 
 ![solution2](Images/solution2.png)
 
-This way, the variable "data" stays as "null"ùand the error message is printed in the console (the parameter is set with its default value):
+This way, the variable "data" stays as "null" and the error message is printed in the console (the parameter is set with its default value):
 
 ![console](Images/console.JPG)
 
