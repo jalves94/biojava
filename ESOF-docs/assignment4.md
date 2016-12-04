@@ -1,0 +1,15 @@
+
+#Software Validation and Verification
+
+##Dynamic Analysis
+
+
+Analysing the results of the application of the EclEmma to the JUnit tests, the test coverage of the project is really bad, as it can be seen in the table below. The covered percentage varies between 1% and almost 90%. This means that the different packages aren’t equally covered. For instance, the Structure GUI, which is an interface for the user to quickly use the features of  the project, is almost not covered by the JUnit tests which means that it’s probable that it has a lot of bugs and doesn’t work properly well. Additionally, there are 2 packages (“Biojava WebServices” and “Biojava survival”) that don’t have any tests implemented, which means that they were not tested.
+Analysing the covered instructions over the project it can be seen that only 48% of the instructions are covered by the tests (218805 covered instructions in 455596) which is a really small value. Regarding the type of code, most of it is not sequential, that means there are a lot of for and if cycles that need to pass several tests.
+
+The dependency coverage analyzes in each package if the dependencies are covered by the tests. Seeing the values it can be concluded that these dependencies are almost not covered for each package. However, the project has a package called “Integration test” that has tests for the integration between the other packages, which covers in part some of the existing dependencies. Nonetheless, neither this package is totally covered (75,8%) as well as its dependencies. This package presents some failures in the tests which indict that the integration between packages or the tests are not well implemented. In total there are 27 failures in the tests, which can indict that there are a lot of bugs inside the project. Also, analysing the number of tests and failures for each package, it can be concluded that the packages that have few tests done are the only ones without failures. As the number of tests increases, the number of failures increases too, which probably means that the packages with a lower number of tests have some failures that were not covered by them.
+In conclusion, giving the lack of coverage of the tests and since there are a lot of failures just on the 50% that is covered, it can be concluded that the project is not well tested and probably has a lot of bugs to be corrected.
+
+![Coverage table](Images/coverage_table.JPG)
+
+Flaky tests are tests that fail intermittently, which means that sometimes they pass and others they fail. This can happen if there is an underlying bug that only happens in some cases. After a considerable number of test runs and looking for the number of failures in the table it is possible to conclude that there are at least 8 flaky tests on the project. This can be a problem because if one of these tests is only executed once and passes, it could cause problems in future applications of the project. For that reason, this kind of tests needs to be identified and corrected fastly.  
