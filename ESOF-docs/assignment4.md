@@ -84,9 +84,9 @@ For the reasons presented above, it is possible to infer that the Biojava projec
 * Bugs related to the code itself: some functions do not work properly, some command lines are broken and consequently cause errors. For example, errors related to endless loops or a file opening with a specific format.
 
 * Bugs related to bad implementation: some functions and features actually work but not in a proper way. For example, some functions about calculations (length, angles, rotations, identity, similarity etc) are working, but the obtained values may not correspond to reality.
-Bugs related to missing/incomplete features: some features are implemented but are not prepared to deal with all situations and need to be enhanced. For example, alignments can be done for sequences only without consecutive gaps.
+* Bugs related to missing/incomplete features: some features are implemented but are not prepared to deal with all situations and need to be enhanced. For example, alignments can be done for sequences only without consecutive gaps.
 
-* Taking just in consideration the demonstrations available in the project that can be runned, it is possible to detect some bugs too (there are also a few reported in the issues). For example, in the Structure GUI demo, when the "Reset Display" button is pressed, the protein structure doesn't restore to its initial appearance after performing changes in the visualization options. That bug is related to a Jmol command that is not executing well on the Jmol interface.
+Taking just in consideration the demonstrations available in the project that can be runned, it is possible to detect some bugs too (there are also a few reported in the issues). For example, in the Structure GUI demo, when the "Reset Display" button is pressed, the protein structure doesn't restore to its initial appearance after performing changes in the visualization options. That bug is related to a Jmol command that is not executing well on the Jmol interface.
 
 
 Also, in the Alignment GUI demo, it was possible to test the robustness of the interface to invalid inputs of the users. In the pairwise structure alignment, there is a window to choose the parameters for the alignment algorithm:
