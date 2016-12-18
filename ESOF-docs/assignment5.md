@@ -51,7 +51,7 @@ Since it is a quite complex project composed by more than 100.000 lines of code,
 
 In projects that are quite complex, with a lot of lines of code and that require several contributors, one of the most important factors is to write code that all people can read and understand. A unit is considered a small group of code that is possible to obtain by dividing the project in smaller parts that can be runned and tested independently and in an efficient way. Logically, smaller units (considered to have 15 lines of code) are easier to test, implement and even to understand, being self-explanatory most of the times. 
 
-Looking at the results provided by both analysis, it is easy to conclude that this BioJava sub-project has half of its units with more than 15 lines of code, some of them with more than 30 and even more than 60 lines of code. Considering that the included packages are a reliable sample of the whole project, BioJava does not have the requirements needed for having a good grade in this metric. This result was expected since, even though there isn’t a lot of unused code, one of the contributors already said that BioJava is very disorganized.
+Looking at the results provided by both analysis, it is easy to conclude that this BioJava sub-project has half of its units with more than 15 lines of code, some of them with more than 30 and even more than 60 lines of code. Considering that the included packages are a reliable sample of the whole project, BioJava does not have the requirements needed for having a good grade in this metric. This result was expected since, even though there isn't a lot of unused code, one of the contributors already said that BioJava is very disorganized.
 
 
 ###Write Simple Units of Code
