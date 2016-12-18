@@ -4,18 +4,16 @@ Software change is inevitable since new requirements emerge whenever the softwar
 
 To do so, developers must keep in mind the software evolution process: 
 
-1. change requests: are the driver for evolution
-2. impact analysis: the software evolution process changes should be linked with components that are affected by the change, thus allowing the cost and impact of the change to be estimated
-3. release planning
+1. Change requests: are the driver for evolution
+2. Impact analysis: the software evolution process changes should be linked with components that are affected by the change, thus allowing the cost and impact of the change to be estimated
+3. Release planning
 
---.1 fault repair
+¨1 Fault repair
+¨2 Platform adaptation
+¨3 System enhancement
 
---.2 platform adaptation
-
---.3 system enhancement
-
-4. change implementation: analyse, design, code and test 
-5. system release
+4. Change implementation: analyse, design, code and test 
+5. System release
 
 Software maintenance is the key to a future-proof code and implies that the program will be modified after it has been put into use, so that new versions of the software can be created, allowing the product to be constantly updated.
 
