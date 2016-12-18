@@ -7,9 +7,13 @@ To do so, developers must keep in mind the software evolution process:
 1. change requests: are the driver for evolution
 2. impact analysis: the software evolution process changes should be linked with components that are affected by the change, thus allowing the cost and impact of the change to be estimated
 3. release planning
-*1 fault repair
-*2 platform adaptation
-*3 system enhancement
+
+.1 fault repair
+
+.2 platform adaptation
+
+.3 system enhancement
+
 4. change implementation: analyse, design, code and test 
 5. system release
 
@@ -57,11 +61,11 @@ Looking at the results provided by both analysis, it is easy to conclude that th
 
 ###Write Simple Units of Code
 
-Write simple units of code is important because the code will be easily understood and changed and fewer tests will be needed to test it. A piece of code that can look really complex for a common user can be seen as simple for its developer. Thus, code complexity is a disputed quality characteristic. The complexity of an unit of code can be evaluated by the number of tests needed to test the unit, the number of branches that it has and by the risk taken and time spent to change it. The number of branches can be measured calculating the number of possible paths through a piece of code. It can be determined by the number of branch points, i.e. statements where the executions can take more that one way, like the "if"ù and "switch"ù statements used in JAVA.
+Write simple units of code is important because the code will be easily understood and changed and fewer tests will be needed to test it. A piece of code that can look really complex for a common user can be seen as simple for its developer. Thus, code complexity is a disputed quality characteristic. The complexity of an unit of code can be evaluated by the number of tests needed to test the unit, the number of branches that it has and by the risk taken and time spent to change it. The number of branches can be measured calculating the number of possible paths through a piece of code. It can be determined by the number of branch points, i.e. statements where the executions can take more that one way, like the "if" and "switch" statements used in JAVA.
 
 The results from this part have shown for both analysis that the code has a large number of code units with more than 5 branch points (more than 25,2% of the units). Some of them (2 for the test only with the _structure-gui_ package and 4 for the test with _structure-gui_ and _core_ packages) have more than 25 branch points which reveals a high code complexity. This means that the complexity of the packages is high since they don't pass the McCabe system test. 
 
-To avoid this complexity it would be necessary to split the methods into smaller ones so that they will be easier to understand and therefore to change. For instance, trying to split an ‚Äúif‚Äù or ‚Äúswitch‚Äù chain to smaller different methods that implement each one of the conditional statements. That way it would be easier to understand the path of the unit and therefore, if some change is required, it would be easy to detect the method that has to be changed.
+To avoid this complexity it would be necessary to split the methods into smaller ones so that they will be easier to understand and therefore to change. For instance, trying to split an "if" or "switch" chain to smaller different methods that implement each one of the conditional statements. That way it would be easier to understand the path of the unit and therefore, if some change is required, it would be easy to detect the method that has to be changed.
 
 
 ### Write Code Once
@@ -81,6 +85,7 @@ Unit interfaces are parameters that, if presented on high number, make the code 
 In the _structure-gui_ and _core_ packages, there are some methods that have more than 6 parameters and the percentage of the evaluated project that has at most two parameters does not reach 83%. For that reason, BioJava does not have a good grade on this metric. Thinking about the structure of an object and how it can be related to the rest of the code before introducing it is the best way to keep unit interfaces small.
 
 ### Separate Concerns in Modules
+
 As already said in previous reports, each module of the project has its own function. However, the modules need each other to be able to perform. There are separate packages for a specific functionality. However, classes are really large and inside one particular package they donít have separate concerns. Thus, a class can be called multiple times by an outside class. The number of calls of this kind is considered for this metric. 
 
 Looking at the results, it is possible to see differences between the two considered analysis. Including just the _structure-gui_ package, this metric has a good grade, due to the fact that most of the classes are called no more than 10 times and just a few have more than 50 calls. However, with both _structure-gui_ and _core_ packages, there are more classes that are called more than 50 times, leading to a bad classification in this metric. This is due to the fact that with the _core_ package, there is no proportional increase of classes with few and many calls and classes have more than one functionality/responsibility. In order to prevent this type of situations (preventing classes from getting a "large class smell"), classes must be slipped. A better separation of concerns can lead to a controlled maintenance of the project since a small change in one class does not have a huge effect in others.
