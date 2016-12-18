@@ -8,9 +8,9 @@ To do so, developers must keep in mind the software evolution process:
 2. Impact analysis: the software evolution process changes should be linked with components that are affected by the change, thus allowing the cost and impact of the change to be estimated
 3. Release planning
 
-¨1 Fault repair
-¨2 Platform adaptation
-¨3 System enhancement
+-1 Fault repair
+-2 Platform adaptation
+-3 System enhancement
 
 4. Change implementation: analyse, design, code and test 
 5. System release
