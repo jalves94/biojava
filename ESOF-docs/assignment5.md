@@ -1,10 +1,72 @@
 #Software Maintenance/Evolution
 
+Software change is inevitable since New requirements emerge whenever the software is used, the business environment is always changing, errors must be repaired when detected, new equipment emerge everyday and the system performance or reliability may have to be improved.
+So, software systems have to evolve to continue to be useful. a lot of time and the majority of budget is spent in evolving software systems, rather than in initial development
+A key problem for all organizations is implementing and managing change to their existing software systems.
+
+To do so, developers must keep in mind the software evolution process: 
+
+1. change requests: are the driver for evolution
+2. impact analysis: the software evolution process changes should be linked with components that are affected by the change, thus allowing the cost and impact of the change to be estimated
+3. release planning
+3.1 fault repair
+3.2 platform adaptation
+3.3 system enhancement
+4. change implementation: analyse, design, code and test 
+5. system release
+
+Software maintenance is the key to a future-proof code and implies that the program will be modified after it has been put into use, so that new versions of the software can be created, allowing the product to be constantly updated.
+
+There are four main types  of  software  maintenance:
+
+* **Corrective Maintenance**: bugs are discovered and have to be fixed.
+
+* **Adaptive Maintenance**: the system has to be adapted to changes in the environment in which it operates.
+
+* **Perfective Maintenance**: users  of  the  system have  new  or  changed  requirements.
+
+* **Preventive Maintenance**: ways  are  identified  to  increase  quality  or  prevent  future  bugs  from  occurring.
+
+In software development, the maintenance phase of a software system often spans ten years or more. During most of this time, there is a continuous stream of issues that need to be resolved (corrective and adaptive maintenance) and enhancement requests that have to be met (perfective maintenance). The efficiency and effectiveness with which issues can be resolved and enhancements can be realized is therefore important for stakeholders.
+
+Another reason that makes maintainability a special aspect of software quality is that it acts as an enabler for other quality characteristics. When a system has high maintainability it will be easier to make improvements in the other quality aspects, such as fixing a security bug. More generally speaking, optimizing a software system requires modifications to its source code, be it on performance, functional suitability, security, etc.
+
+SGI metrics has emerged to help software developers to write better code that assures the maintainability of the software they are developing. The three most important guidelines og SGI are:
+
+1. Maintainability benefits most from adhering to simple guidelines. Every individual contribution counts.
+
+2. Maintainability is not an afterthought, but should be addressed from the very  beginning of a development project.
+
+3. The more a software system complies with the guidelines, the more maintainable it is.
+
+Maintainability is a quality characteristic on a scale. It signifies different degrees of being able to maintain. SIG divides the systems in the benchmark in stars, ranging from 1 star (hardest to maintain) to 5 stars (easiest to maintain). The distribution of these star ratings among systems from 1 to 5 stars is 5%-30%-30%-30%-5%. The star ratings serve as a predictor for actual system maintainability. The systems in the benchmark are ranked based on their metric quality profiles.
+
+It is possible to see all of this applied to our project later in this report.
+
+
+
 ## Software Maintainability using the SIG Metrics
 Since it is a quite complex project composed by more than 100.000 lines of code, two sub repositories had to be made in order to analyze it with Better Code Hub. For that reason, we runned Better Code Hub twice, in order to understand the differences that would appear when using each of the sub repositories. First it was chosen the part of the repository that included several demonstrations with a graphical user interface already used in the previous assignment: Structure GUI. For the second sub repository we included the same as in the first one, plus one of the modules that it had a dependency on: the Core module. The results can be seen [here](https://github.com/jalves94/biojava/tree/master/ESOF-docs/BetterCode_reports).
 
+
+###Write Short Units of Code
+
+In projects that are quite complex, with a lot of lines of code and that require several contributors, one of the most important factors is to write code that all people can read and understand. A unit is considered a small group of code that is possible to obtain by dividing the project in smaller parts that can be runned and tested independently and in an efficient way. Logically, smaller units (considered to have 15 lines of code) are easier to test, implement and even to understand, being self-explanatory most of the times. 
+
+Looking at the results provided by both analysis, it is easy to conclude that this BioJava sub-project has half of its units with more than 15 lines of code, some of them with more than 30 and even more than 60 lines of code. Considering that the included packages are a reliable sample of the whole project, BioJava does not have the requirements needed for having a good grade in this metric. This result was expected since, even though there isn’t a lot of unused code, one of the contributors already said that BioJava is very disorganized.
+
+
+###Write Simple Units of Code
+
+Write simple units of code is important because the code will be easily understood and changed and fewer tests will be needed to test it. A piece of code that can look really complex for a common user can be seen as simple for its developer. Thus, code complexity is a disputed quality characteristic. The complexity of an unit of code can be evaluated by the number of tests needed to test the unit, the number of branches that it has and by the risk taken and time spent to change it. The number of branches can be measured calculating the number of possible paths through a piece of code. It can be determined by the number of branch points, i.e. statements where the executions can take more that one way, like the “if” and “switch” statements used in JAVA.
+
+The results from this part have shown for both analysis that the code has a large number of code units with more than 5 branch points (more than 25,2% of the units). Some of them (2 for the test only with the _structure-gui_ package and 4 for the test with _structure-gui_ and _core_ packages) have more than 25 branch points which reveals a high code complexity. This means that the complexity of the packages is high since they don’t pass the McCabe system test. 
+
+To avoid this complexity it would be necessary to split the methods into smaller ones so that they will be easier to understand and therefore to change. For instance, trying to split an “if” or “switch” chain to smaller different methods that implement each one of the conditional statements. That way it would be easier to understand the path of the unit and therefore, if some change is required, it would be easy to detect the method that has to be changed.
+
+
 ### Write Code Once
-Don�t copy code. Even if it looks easier, the copied code can lead to duplicates. If those duplicates have bugs, they will be harder to fix since the code has to be fixed in more than one place and more errors can be made on the correction process. Another problem of duplicates is analyzing and detecting the source of the problem when a bug occurs in that part of the code.
+Dont copy code. Even if it looks easier, the copied code can lead to duplicates. If those duplicates have bugs, they will be harder to fix since the code has to be fixed in more than one place and more errors can be made on the correction process. Another problem of duplicates is analyzing and detecting the source of the problem when a bug occurs in that part of the code.
 The packages used for analysis have less than 95,4% of non duplicated code so it means that the project has a lot of redundant code and consequently its packages have a lot of copied code. 
 To avoid this practice, the methods that are needed in more than one part of the code should be placed in one method that can be called wherever it is needed in the project. If the code is from another project, the necessary features should be imported and re-written instead of being copied, as that way it will be easier to understand and change in case of an error.
 In conclusion, it would be a good practice to review and rewrite the code from at least the two analyzed packages by trying to understand which parts should be changed to facilitate the understanding of the code. This fact can be a problem in attracting new contributors to his open-source project.
@@ -14,7 +76,7 @@ Unit interfaces are parameters that, if presented on high number, make the code 
 In the _structure-gui_ and _core_ packages, there are some methods that have more than 6 parameters and the percentage of the evaluated project that has at most two parameters does not reach 83%. For that reason, BioJava does not have a good grade on this metric. Thinking about the structure of an object and how it can be related to the rest of the code before introducing it is the best way to keep unit interfaces small.
 
 ### Separate Concerns in Modules
-As already said in previous reports, each module of the project has its own function. However, the modules need each other to be able to perform. There are separate packages for a specific functionality. However, classes are really large and inside one particular package they don�t have separate concerns. Thus, a class can be called multiple times by an outside class. The number of calls of this kind is considered for this metric. 
+As already said in previous reports, each module of the project has its own function. However, the modules need each other to be able to perform. There are separate packages for a specific functionality. However, classes are really large and inside one particular package they dont have separate concerns. Thus, a class can be called multiple times by an outside class. The number of calls of this kind is considered for this metric. 
 Looking at the results, it is possible to see differences between the two considered analysis. Including just the _structure-gui_ package, this metric has a good grade, due to the fact that most of the classes are called no more than 10 times and just a few have more than 50 calls. However, with both _structure-gui_ and _core_ packages, there are more classes that are called more than 50 times, leading to a bad classification in this metric. This is due to the fact that with the _core_ package, there is no proportional increase of classes with few and many calls and classes have more than one functionality/responsibility. In order to prevent this type of situations (preventing classes from getting a "large class smell"), classes must be slipped. A better separation of concerns can lead to a controlled maintenance of the project since a small change in one class does not have a huge effect in others.
 
 ### Couple Architecture Components Loosely
@@ -39,7 +101,7 @@ Looking at the code, it is relatively easy to understand that the modifications 
 StructureAlignmentDisplay.display(afpChain, ca1, ca2);
 ```
 
-The `display` method returns an object of class `StructureAlignmentJmol` which is where the interface is defined. Therefore, this was the only class that needed to suffer modifications, as the implemented changes don�t interfere with any other part of the project (low change impact).
+The `display` method returns an object of class `StructureAlignmentJmol` which is where the interface is defined. Therefore, this was the only class that needed to suffer modifications, as the implemented changes dont interfere with any other part of the project (low change impact).
 
 
 The `StructureAlignmentJmol` class uses a GUI widget toolkit for JAVA called Swing to implement the interface and its components. So, in order to implement the zoom feature, an object of class `JSlider` was used. Adding a _ChangeListener_ to the object, it is possible to detect when the user changes the position of the cursor on the bar and get the corresponding value. This value (between 0 and 500) is used to change the Jmol scripting command that is going to be executed (ex: "zoom 300"). Regarding the spinning feature, an object of class `JCheckBox` was created. Using an _ItemListener_, it is possible to distinguish whether the box is checked or not, and when it is, the protein starts spinning by executing the corresponding Jmol command "spin ON". On the contrary, when the box is unchecked, the executed command is "spin OFF".
